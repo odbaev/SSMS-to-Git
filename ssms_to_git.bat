@@ -74,6 +74,9 @@ if "%schema%"=="" (
     exit /b 1
 )
 
+set name=%name:?=_%
+for %%a in (\ / : ^< ^> ^| ^") do set name=!name:%%a=_!
+
 if "%name%"=="" (
     echo Sql object name not found
     exit /b 1
