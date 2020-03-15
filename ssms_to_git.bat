@@ -52,7 +52,9 @@ for /f "tokens=1,2,3 delims=[]." %%a in ('findstr /r /i "\<CREATE\> \<ALTER\>" "
     for %%i in (%%a) do set type=%%i
     set schema=%%b
     set name=%%c
+    goto :break
 )
+:break
 
 set types[PROCEDURE]=Stored Procedures
 set types[PROC]=Stored Procedures
